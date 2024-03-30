@@ -1,0 +1,32 @@
+ outp | addr | data (base 16)
+
+  0:0 |    0 | b6 00          ; ldi r6, 0
+  2:0 |    2 | 96 ff          ; ldi r5, 255
+  4:0 |    4 |                ; first:
+  4:0 |    4 | 09             ; stc
+  5:0 |    5 | ab             ; rmov r6
+  6:0 |    6 | 02             ; adc r1
+  7:0 |    7 | 0c             ; amov r1
+  8:0 |    8 | f6 00 d6 12 0e ; bca! second
+  d:0 |    d | f6 00 d6 04 0d ; jmp! first
+ 12:0 |   12 |                ; second:
+ 12:0 |   12 | ab             ; rmov r6
+ 13:0 |   13 | 22             ; adc r2
+ 14:0 |   14 | 2c             ; amov r2
+ 15:0 |   15 | f6 00 d6 1f 0e ; bca! third
+ 1a:0 |   1a | f6 00 d6 04 0d ; jmp! first
+ 1f:0 |   1f |                ; third:
+ 1f:0 |   1f | ab             ; rmov r6
+ 20:0 |   20 | 42             ; adc r3
+ 21:0 |   21 | 4c             ; amov r3
+ 22:0 |   22 | f6 00 d6 2c 0e ; bca! fourth
+ 27:0 |   27 | f6 00 d6 04 0d ; jmp! first
+ 2c:0 |   2c |                ; fourth:
+ 2c:0 |   2c | ab             ; rmov r6
+ 2d:0 |   2d | 62             ; adc r4
+ 2e:0 |   2e | 6c             ; amov r4
+ 2f:0 |   2f | 88             ; cmp r5
+ 30:0 |   30 | f6 00 d6 3a 10 ; bze! done
+ 35:0 |   35 | f6 00 d6 04 0d ; jmp! first
+ 3a:0 |   3a |                ; done:
+ 3a:0 |   3a | 1d             ; hlt

@@ -1,0 +1,20 @@
+ outp | addr | data (base 16)
+
+  0:0 |    0 |                ; wait:
+  0:0 |    0 | 1a             ; in r1
+  1:0 |    1 | b6 00          ; ldi r6, 0
+  3:0 |    3 | ab             ; rmov r6
+  4:0 |    4 | 00             ; add r1
+  5:0 |    5 | f6 00 d6 00 10 ; bze! wait
+  a:0 |    a | b6 04          ; ldi r6, 0b00000100
+  c:0 |    c | ab             ; rmov r6
+  d:0 |    d | 06             ; and r1
+  e:0 |    e | f6 00 d6 18 11 ; bnz! up
+ 13:0 |   13 | f6 00 d6 00 0d ; jmp! wait
+ 18:0 |   18 |                ; up:
+ 18:0 |   18 | b6 00          ; ldi r6, 0
+ 1a:0 |   1a | ab             ; rmov r6
+ 1b:0 |   1b | 09             ; stc
+ 1c:0 |   1c | 22             ; adc r2
+ 1d:0 |   1d | 2c             ; amov r2
+ 1e:0 |   1e | f6 00 d6 00 0d ; jmp! wait
