@@ -440,7 +440,7 @@
     </comp>
     <comp lib="0" loc="(2330,2920)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="acz"/>
+      <a name="label" val="zac"/>
     </comp>
     <comp lib="0" loc="(2330,2960)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -896,9 +896,9 @@
       <a name="label" val="cur_byte_im"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
-    <comp lib="0" loc="(3470,3790)" name="Tunnel">
+    <comp lib="0" loc="(3470,3800)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="acz"/>
+      <a name="label" val="zac"/>
       <a name="labelfont" val="SansSerif bold 8"/>
     </comp>
     <comp lib="0" loc="(3510,1800)" name="Tunnel">
@@ -2137,6 +2137,7 @@ e f6 0 d6 4 d 14 42
     <wire from="(3450,5200)" to="(3470,5200)"/>
     <wire from="(3450,5290)" to="(3470,5290)"/>
     <wire from="(3460,4600)" to="(3480,4600)"/>
+    <wire from="(3470,3790)" to="(3470,3800)"/>
     <wire from="(3470,3790)" to="(3490,3790)"/>
     <wire from="(3490,3780)" to="(3490,3790)"/>
     <wire from="(3510,1800)" to="(3530,1800)"/>
